@@ -146,10 +146,12 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    rename (1.0.6)
+      activesupport
+      rails (>= 3.0.0)
+      thor (>= 0.19.1)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.2.1)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -209,7 +211,8 @@ DEPENDENCIES
   pry-rails
   puma (~> 4)
   rails (~> 6.0)
-  sass-rails (>= 6)
+  rename
+  sassc-rails
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

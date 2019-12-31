@@ -10,7 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4'
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+gem 'sassc-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Use Redis adapter to run Action Cable in production
@@ -33,6 +33,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rename'
+
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
