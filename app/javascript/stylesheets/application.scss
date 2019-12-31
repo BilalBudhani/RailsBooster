@@ -7,6 +7,27 @@
 */
 @tailwind base;
 
+
+h1 {
+  @apply font-bold text-5xl;
+}
+
+h2 {
+  @apply font-bold text-4xl;
+}
+
+h3 {
+  @apply font-bold text-3xl;
+}
+
+a {
+  @apply text-hyperlink;
+}
+
+a:hover {
+  @apply underline;
+}
+
 /**
  * This injects any component classes registered by plugins.
  */
@@ -27,6 +48,42 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
+
+.card {
+  @apply max-w-lg w-full bg-white rounded-lg shadow border p-4;
+}
+
+form {
+  .form-field {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-gray-800 text-sm font-bold;
+  }
+
+  .form-input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+  }
+
+  .form-input:focus {
+    @apply outline-none shadow-outline;
+  }
+}
+
+.hero-container {
+  @apply flex w-full h-screen flex-col justify-center items-center;
+}
+
+
+.btn-primary {
+  @apply px-4 py-2 bg-primary text-white font-medium rounded;
+}
+
+.btn-primary:hover {
+  @apply bg-secondary;
+}
+
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

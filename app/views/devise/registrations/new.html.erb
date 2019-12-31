@@ -1,34 +1,31 @@
-<div class="flex w-full h-screen flex-col justify-center items-center">
-  <h2 class="font-black text-4xl my-2">Sign up</h2>
-  <div class="max-w-lg w-full bg-white rounded-lg shadow border p-4">
-
+<div class="hero-container">
+  <h2 class="my-2">Sign up</h2>
+  <div class="card">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field mb-4">
-        <%= f.label :email, class: 'block text-gray-800 text-sm font-bold mb-2' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+      <div class="form-field">
+        <%= f.label :email, class: 'form-label mb-2' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input' %>
       </div>
 
-      <div class="field mb-4">
-        <%= f.label :password, class: 'block text-gray-800 text-sm font-bold' %>
+      <div class="form-field">
+        <%= f.label :password, class: 'form-label' %>
         <% if @minimum_password_length %>
           <em class="text-xs text-gray-600 mb-2">(<%= @minimum_password_length %> characters minimum)</em>
         <% end %>
-        <%= f.password_field :password, autocomplete: "new-password", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-input' %>
       </div>
 
-      <div class="field mb-4">
-        <%= f.label :password_confirmation, class: 'block text-gray-800 text-sm font-bold mb-2' %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+      <div class="form-field">
+        <%= f.label :password_confirmation, class: 'form-label mb-2' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-input' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: 'px-4 py-2 bg-indigo-400 text-white font-medium rounded hover:bg-indigo-600' %>
+        <%= f.submit "Sign up", class: 'btn-primary' %>
       </div>
     <% end %>
-    <div class="border-t pt-2 mt-2">
-      <%= render "devise/shared/links" %>
-    </div>
+    <%= render "devise/shared/links" %>
   </div>
 </div>

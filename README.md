@@ -6,9 +6,11 @@ I regularly keep experimenting with ideas and problems to solve with Ruby On Rai
 
 RailsBooster is an attempt to put together all the common configurations, gems and best practices in one place which will eliminate the need of all prerequisites and immediately enables working on the actual business logic.
 
-## 📦 What's in the box?
+## 📦 What's in the box? _(work in progress)_
 
-Currently I'm working towards release first version of this project. Please check back later.
+* Authentication using Devise with pretty Login/Sign Up pages
+* TailwindCSS as UI framework
+* Webpacker configured with PurgeCSS
 
 ## 🛠 Getting Started
 
