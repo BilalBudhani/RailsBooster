@@ -5,12 +5,7 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:vue/essential",
-    "prettier/vue",
     "plugin:prettier/recommended"
-  ],
-  "plugins": [
-    "vue"
   ],
   "rules": {}
 }

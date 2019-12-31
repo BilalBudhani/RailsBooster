@@ -19,7 +19,7 @@ const postcss = {
 if (process.env.RAILS_ENV === "production") {
   postcss.plugins.push(
     purgecss({
-      content: ["./app/javascript/**/*.vue"]
+      content: ["./app/views/**/*.html.erb"]
     })
   );
 }
