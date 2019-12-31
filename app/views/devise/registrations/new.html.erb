@@ -1,0 +1,31 @@
+<div class="hero-container">
+  <h2 class="my-2">Sign up</h2>
+  <div class="card">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-field">
+        <%= f.label :email, class: 'form-label mb-2' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input' %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :password, class: 'form-label' %>
+        <% if @minimum_password_length %>
+          <em class="text-xs text-gray-600 mb-2">(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-input' %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :password_confirmation, class: 'form-label mb-2' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-input' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: 'btn-primary' %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

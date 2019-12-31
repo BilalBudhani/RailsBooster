@@ -10,6 +10,13 @@
   </head>
 
   <body class="antialiased bg-gray-100 font-sans">
+    <% if flash[:notice] || flash[:alert] %>
+      <div class="flex w-full max-w-4xl">
+        <p class="notice bg-green-700 text-white p-2"><%= flash[:notice] %></p>
+        <p class="alert bg-red-700 text-white p-2"><%= flash[:alert] %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
