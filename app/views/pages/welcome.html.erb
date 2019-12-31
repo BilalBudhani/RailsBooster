@@ -1,0 +1,16 @@
+<div class="hero-container">
+  <h1>RailsBooster</h1>
+  <p>Preconfigured Ruby On Rails Boilerplate To Provide Instant Productivity ⚡️</p>
+
+  <% if user_signed_in? %>
+    <div class="py-6">
+      <strong>Welcome <%= current_user.email%>!</strong>
+      (<%= link_to 'Logout', destroy_user_session_path, method: :delete %>)
+    </div>
+  <% else %>
+    <div class="flex py-6">
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn-primary mr-6' %>
+      <%= link_to 'Login', new_user_session_path, class: 'py-2 px-4 border-2 rounded text-black font-bold' %>
+    </div>
+  <% end %>
+</div>
