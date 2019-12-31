@@ -12,7 +12,7 @@ const postcss = {
       },
       stage: 3
     }),
-    tailwind("./app/javascript/styles/tailwind.config.js")
+    tailwind("./app/javascript/stylesheets/tailwind.config.js")
   ]
 };
 
