@@ -13,6 +13,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - Authentication using Devise with pretty Login/Sign Up pages
 - TailwindCSS as UI framework
 - Webpacker configured with PurgeCSS
+- Vue.js javascript framework for building modern UIs
 
 ## 🛠 Getting Started
 
