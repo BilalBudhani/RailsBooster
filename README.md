@@ -16,8 +16,9 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - DotEnv support for picking up variables from `.env` only for development & testing environment
 - [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) for running lightweight async background jobs as `ActiveJob` default adapter
 - Uses [Standard](https://github.com/testdouble/standard) as Ruby linter
+- View outgoing emails at [/letters](http://localhost:3000/letters) in development
 
-## 🛠 Getting Started
+## 🛠 How to use
 
 - Clone this repo with `git clone git@github.com:BilalBudhani/RailsBooster.git [YOUR PROJECT FOLDER NAME]`
 - Run `bundle install && yarn install`
@@ -27,8 +28,11 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - RailsBooster ships with `Procfile.dev` to run multiple processes with a single command. I recommend installing [Overmind](https://github.com/DarthSim/overmind) or [Foreman](https://github.com/ddollar/foreman) to run this project.
 - Start Rails and Webpacker server with `overmind s`
 
-
 ### 👀 Roadmap
+- [x] Basic authentication
+- [x] Configure TailwindCSS to provide basic styling
+- [x] Use production ready backgrounding gem for async usage
+- [x] Setup a linter for keeping styleguide & formatting in check
 - [ ] Template for mailer views
 - [ ] Sign in via Google authentication
 - [ ] Move to [clearance](https://github.com/thoughtbot/clearance) for simpler authentication abstraction
