@@ -17,6 +17,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) for running lightweight async background jobs as `ActiveJob` default adapter
 - Uses [Standard](https://github.com/testdouble/standard) as Ruby linter
 - View outgoing emails at [/letters](http://localhost:3000/letters) in development
+- Model annotations to ease decision making
 
 ## 🛠 How to use
 
