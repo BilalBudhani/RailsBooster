@@ -15,6 +15,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - TailwindCSS as CSS framework with PurgeCSS configured
 - DotEnv support for picking up variables from `.env` only for development & testing environment
 - [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) for running lightweight async background jobs as `ActiveJob` default adapter
+- Uses [Standard](https://github.com/testdouble/standard) as Ruby linter
 
 ## 🛠 Getting Started
 
@@ -33,6 +34,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - [ ] Move to [clearance](https://github.com/thoughtbot/clearance) for simpler authentication abstraction
 - [ ] ActionCable support
 - [ ] ActiveStorage support
+- [ ] Github actions to enforce linters
 
 ## License
 
