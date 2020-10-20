@@ -2,20 +2,20 @@
   "name": "railsbooster",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.0.1",
+    "@rails/actioncable": "^6.0.3-4",
+    "@rails/activestorage": "^6.0.3-4",
+    "@rails/ujs": "^6.0.3-4",
+    "@rails/webpacker": "^5.2.1",
     "tailwindcss": "^1.9.5"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.19.1",
-    "webpack-dev-server": "^3.10.3"
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2",
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
     "dev": "./bin/webpack-dev-server"

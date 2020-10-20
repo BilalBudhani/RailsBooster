@@ -22,7 +22,7 @@ gem 'webpacker', '~> 5.0'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '~> 1.4', require: false
 
 # Booster
 gem 'devise', '~> 4.7', '>= 4.7.1'
