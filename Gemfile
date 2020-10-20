@@ -26,8 +26,8 @@ gem 'webpacker', '~> 5.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '~> 1.4', require: false
 
-# Booster
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'sucker_punch', '~> 2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

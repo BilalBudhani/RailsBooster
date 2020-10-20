@@ -13,6 +13,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - Authentication using Devise with pretty Login/Sign Up pages
 - TailwindCSS as CSS framework with PurgeCSS configured
 - DotEnv support for picking up variables from `.env` only for development & testing environment
+- [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) for running lightweight async background jobs as `ActiveJob` default adapter
 
 ## 🛠 Getting Started
 
