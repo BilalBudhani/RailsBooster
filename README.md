@@ -11,13 +11,14 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 ## 📦 What's in the box? _(work in progress)_
 
 - Authentication using Devise with pretty Login/Sign Up pages
-- TailwindCSS as UI framework
-- Webpacker configured with PurgeCSS
+- TailwindCSS as CSS framework with PurgeCSS configured
+- DotEnv support for picking up variables from `.env`
 
 ## 🛠 Getting Started
 
 - Clone this repo with `git clone git@github.com:BilalBudhani/RailsBooster.git [YOUR PROJECT FOLDER NAME]`
 - Run `bundle install && yarn install`
+- Run `cp .env.example .env`
 - Run `rails g rename:into [ProjectName]`
 - Remove `rename` gem from `Gemfile`
 - RailsBooster ships with `Procfile.dev` to run multiple processes with a single command. I recommend installing [Overmind](https://github.com/DarthSim/overmind) or [Foreman](https://github.com/ddollar/foreman) to run this project.
