@@ -1,6 +1,9 @@
 const { colors } = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  purge: [
+    '../../views/**/*.erb'
+  ],
   theme: {
     extend: {
       colors: {
