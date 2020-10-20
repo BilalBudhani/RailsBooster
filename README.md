@@ -10,6 +10,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 
 ## 📦 What's in the box? _(work in progress)_
 
+- No Turbolinks. I prefer using [Vue](https://vuejs.com) and [Inertia](https://inertiajs.com) which doesn't require Turbolinks.
 - Authentication using Devise with pretty Login/Sign Up pages
 - TailwindCSS as UI framework
 - Webpacker configured with PurgeCSS
@@ -22,6 +23,14 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - Remove `rename` gem from `Gemfile`
 - RailsBooster ships with `Procfile.dev` to run multiple processes with a single command. I recommend installing [Overmind](https://github.com/DarthSim/overmind) or [Foreman](https://github.com/ddollar/foreman) to run this project.
 - Start Rails and Webpacker server with `overmind s`
+
+
+### 👀 Roadmap
+- [ ] Template for mailer views
+- [ ] Sign in via Google authentication
+- [ ] Move to [clearance](https://github.com/thoughtbot/clearance) for simpler authentication abstraction
+- [ ] ActionCable support
+- [ ] ActiveStorage support
 
 ## License
 
