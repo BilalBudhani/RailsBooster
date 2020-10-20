@@ -8,11 +8,11 @@ I regularly keep experimenting with ideas and problems to solve with Ruby On Rai
 
 RailsBooster is an attempt to put together all the common configurations, gems and best practices in one place which will eliminate the need of all prerequisites and immediately enables working on the actual business logic.
 
-## 📦 What's in the box? _(work in progress)_
+## 📦 What's in the box?
 
 - Authentication using Devise with pretty Login/Sign Up pages
 - TailwindCSS as CSS framework with PurgeCSS configured
-- DotEnv support for picking up variables from `.env`
+- DotEnv support for picking up variables from `.env` only for development & testing environment
 
 ## 🛠 Getting Started
 
