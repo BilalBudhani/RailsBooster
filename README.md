@@ -1,6 +1,6 @@
 # 🚀 RailsBooster
 
-Preconfigured Ruby On Rails Boilerplate To Provide Instant Productivity ⚡️
+Pre-Configured Ruby On Rails Boilerplate To Provide Instant Productivity ⚡️
 
 ## 🤓 Motivation behind the project
 
