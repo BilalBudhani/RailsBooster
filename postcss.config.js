@@ -1,8 +1,6 @@
-const process = require("process");
-const purgecss = require("@fullhuman/postcss-purgecss");
 const tailwind = require("tailwindcss");
 
-const postcss = {
+module.exports = {
   plugins: [
     require("postcss-import"),
     require("postcss-flexbugs-fixes"),
@@ -15,13 +13,3 @@ const postcss = {
     tailwind("./app/javascript/stylesheets/tailwind.config.js")
   ]
 };
-
-if (process.env.RAILS_ENV === "production") {
-  postcss.plugins.push(
-    purgecss({
-      content: ["./app/views/**/*.html.erb"]
-    })
-  );
-}
-
-module.exports = postcss;
