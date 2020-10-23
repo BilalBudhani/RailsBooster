@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full h-screen">
     <Header />
     <main class="container mx-auto relative">
       <slot></slot>
