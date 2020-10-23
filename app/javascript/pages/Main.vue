@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <Card>
-      <h1>RailsBooster</h1>
       <p>Preconfigured Ruby On Rails Boilerplate To Provide Instant Productivity ⚡️</p>
 
       <div class="py-6" v-if="$page.props.user">
