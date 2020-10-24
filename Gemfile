@@ -26,7 +26,7 @@ gem "webpacker", "~> 5.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", "~> 1.4", require: false
 
-gem "devise", "~> 4.7"
+gem "clearance"
 gem "sucker_punch", "~> 2"
 
 gem "inertia_rails"

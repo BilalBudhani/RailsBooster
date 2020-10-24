@@ -8,7 +8,7 @@
         <slot name="title"></slot>
       </h2>
     </div>
-    <div class="w-full bg-white shadow border p-4">
+    <div class="bg-white shadow border p-4">
       <slot />
     </div>
   </section>

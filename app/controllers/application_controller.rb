@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Clearance::Controller
   inertia_share do
     {
       errors: Current.errors || [],
