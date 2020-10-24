@@ -1,17 +1,29 @@
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-import ujs from "@rails/ujs";
+import Vue from "vue/dist/vue.esm";
+import { Inertia } from "@inertiajs/inertia"
+import { App, plugin } from '@inertiajs/inertia-vue'
+import axios from "axios";
+import "nprogress/nprogress.css";
 import "../stylesheets/application.scss";
 
-document.addEventListener("DOMContentLoaded", () => {
-  ujs.start();
+Vue.use(plugin)
+
+// Workaround for Rails CSRF
+Inertia.on('start', () => {
+  const csrfToken = document.querySelector("meta[name=csrf-token]").content
+  axios.defaults.headers.common['X-CSRF-Token'] = csrfToken
 });
 
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+const el = document.getElementById('app')
+
+// Shared Components
+const files = require.context('../components/common', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+
+new Vue({
+  render: h => h(App, {
+    props: {
+      initialPage: JSON.parse(el.dataset.page),
+      resolveComponent: name => require(`../pages/${name}`).default,
+    },
+  }),
+}).$mount(el)

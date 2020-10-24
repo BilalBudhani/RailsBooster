@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
-  def welcome
+
+  def index
+    render inertia: "Main"
   end
 end
