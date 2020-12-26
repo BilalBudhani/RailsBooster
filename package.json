@@ -8,7 +8,9 @@
     "@rails/actioncable": "^6.0.3-4",
     "@rails/activestorage": "^6.0.3-4",
     "@rails/webpacker": "^5.2.1",
-    "tailwindcss": "^1.9.5",
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "tailwindcss": "^2.0.2",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12"
