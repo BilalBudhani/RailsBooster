@@ -38,7 +38,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "rename"
   gem "letter_opener_web"
   gem "annotate"
 

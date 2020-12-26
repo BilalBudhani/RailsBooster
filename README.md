@@ -10,7 +10,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 
 ## 📦 What's in the box?
 
-- No Turbolinks. I prefer using [Vue](https://vuejs.com) and [Inertia](https://inertiajs.com) which doesn't require Turbolinks.
+- I prefer using [Vue](https://vuejs.com) and [Inertia](https://inertiajs.com) instead of Turbolinks.
 - Authentication using Devise with pretty Login/Sign Up pages
 - TailwindCSS as CSS framework with PurgeCSS configured
 - DotEnv support for picking up variables from `.env` only for development & testing environment
@@ -24,8 +24,7 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 - Clone this repo with `git clone git@github.com:BilalBudhani/RailsBooster.git [YOUR PROJECT FOLDER NAME]`
 - Run `bundle install && yarn install`
 - Run `cp .env.example .env`
-- Run `rails g rename:into [ProjectName]`
-- Remove `rename` gem from `Gemfile`
+- Use your IDE's find & replace functionality to rename `RailsBooster` to `[ProjectName]`
 - RailsBooster ships with `Procfile.dev` to run multiple processes with a single command. I recommend installing [Overmind](https://github.com/DarthSim/overmind) or [Foreman](https://github.com/ddollar/foreman) to run this project.
 - Start Rails and Webpacker server with `overmind s`
 
