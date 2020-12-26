@@ -6,7 +6,7 @@ ruby "~> 2.7"
 gem "dotenv-rails", group: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.0"
+gem "rails", "~> 6"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
@@ -28,7 +28,6 @@ gem "bootsnap", "~> 1.4", require: false
 
 gem "devise", "~> 4.7"
 gem "sucker_punch", "~> 2"
-
 gem "inertia_rails"
 
 group :development, :test do
