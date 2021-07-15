@@ -25,18 +25,13 @@ after_bundle do
   run "yarn add vite-plugin-vue2 --dev"
 
   run "yarn add @inertiajs/inertia @inertiajs/inertia-vue @inertiajs/progress"
+  run "yarn add tailwindcss@latest postcss@latest autoprefixer@latest @tailwindcss/forms"
+
+  directory "config", force: true
+  directory "app", force: true
 
   copy_file "vite.config.ts"
-  copy_file "config/vite.json"
-
-  run "mkdir -p app/javascript/entrypoints"
-  run "mkdir -p app/javascript/Pages"
-  run "mkdir -p app/javascript/Components"
-
-  copy_file "app/javascript/entrypoints/application.js"
-  copy_file "app/controllers/application_controller.rb"
-  copy_file "app/controllers/pages_controller.rb"
-  copy_file "app/javascript/Pages/Dashboard.vue"
+  copy_file "postcss.config.js"
   copy_file "Procfile.dev"
 
   route 'root to: "pages#index"'

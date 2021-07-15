@@ -10,8 +10,11 @@ RailsBooster is an attempt to put together all the common configurations, gems a
 
 ## 🛠 How to use
 
-Run `rails new blog --skip-javascript --skip-webpacker -d postgresql -m https://raw.githubusercontent.com/bilalbudhani/railsbooster/master/template.rb`
+Run
 
+```bash
+  rails new blog --skip-javascript --skip-webpacker -d postgresql -m https://raw.githubusercontent.com/bilalbudhani/railsbooster/master/template.rb
+```
 
 ### LICENSE
 

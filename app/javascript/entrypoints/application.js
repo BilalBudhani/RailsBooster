@@ -10,6 +10,7 @@ import Vue from "vue";
 import { createInertiaApp } from '@inertiajs/inertia-vue'
 import { InertiaProgress } from '@inertiajs/progress'
 import axios from "axios";
+import "~/stylesheets/application.css"
 
 axios.defaults.xsrfHeaderName = 'X-CSRF-Token';
 

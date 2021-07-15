@@ -1,5 +1,7 @@
 <template>
-  <h1>RailsBooster is ready to roll</h1>
+  <main class="w-full h-screen flex items-center justify-center">
+    <h1 class="text-2xl font-bold">🚀 RailsBooster is ready to roll</h1>
+  </main>
 </template>
 
 <script>
