@@ -1,0 +1,35 @@
+version: '7.5'
+
+compose:
+  files:
+    - docker/docker-compose.yml
+  project_name: railsbooster
+
+interaction:
+  shell:
+    description: Open the Bash shell in app's container
+    service: web
+    command: bash
+    compose:
+      run_options: [no-deps]
+
+  bundle:
+    description: Run Bundler commands
+    service: web
+    command: bundle
+
+  rails:
+    description: Run Rails commands
+    service: web
+    command: bundle exec rails
+    subcommands:
+      s:
+        description: Run Rails server at http://localhost:3000
+        service: web
+        compose:
+          run_options: [service-ports, use-aliases]
+
+  psql:
+    description: Run Postgres psql console
+    service: web
+    command: psql
