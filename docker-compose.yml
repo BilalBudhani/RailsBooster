@@ -14,7 +14,7 @@ x-app: &app
     RAILS_LOG_TO_STDOUT: true
     BOOTSNAP_CACHE_DIR: /usr/local/bundle/_bootsnap
     YARN_CACHE_FOLDER: /app/node_modules/.yarn-cache
-    GOOD_JOB_EXECUTION_MODE: async
+    GOOD_JOB_EXECUTION_MODE: external
   volumes:
     - .:/app
     - bundle_cache:/usr/local/bundle
@@ -46,6 +46,9 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
+  worker:
+    <<: *app
+    command: bundle exec good_job start
   js:
     <<: *app
     command: yarn build --watch
