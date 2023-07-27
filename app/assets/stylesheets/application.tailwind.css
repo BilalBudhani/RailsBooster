@@ -26,6 +26,10 @@
 }
 
 @layer components {
+  .hero-container {
+    @apply flex w-full h-screen flex-col justify-center items-center;
+  }
+
   .card {
     @apply max-w-lg w-full bg-white rounded-md border-2 p-6;
   }
