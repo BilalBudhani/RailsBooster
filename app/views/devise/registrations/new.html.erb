@@ -1,0 +1,43 @@
+<div class="hero-container">
+  <h2 class="mb-6">Sign up</h2>
+  <div class="card">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-field">
+        <%= f.label :first_name, class: 'form-label mb-2' %>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "name", class: 'form-input', placeholder: "Bruce" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :last_name, class: 'form-label mb-2' %>
+        <%= f.text_field :last_name, autocomplete: "name", class: 'form-input', placeholder: "Wayne" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :email, class: 'form-label mb-2' %>
+        <%= f.email_field :email, autocomplete: "email", class: 'form-input', placeholder: "bruce@wayne.com" %>
+      </div>
+
+      <div class="form-field">
+        <div class="inline-flex items-center space-x-1 mb-2">
+          <%= f.label :password, class: 'form-label' %>
+          <% if @minimum_password_length %>
+            <em class="text-xs text-gray-600">(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+        </div>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'form-input', placeholder: "Pick a secure password" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.label :password_confirmation, class: 'form-label mb-2' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-input', placeholder: "Re-enter password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: 'btn-primary' %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
