@@ -11,6 +11,14 @@
   </head>
 
   <body class="antialiased text-slate-900 bg-slate-50">
+    <% if flash[:notice] %>
+      <%= content_tag(:span, flash[:notice], class: "flash_notice") %>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <%= content_tag(:span, flash[:alert], class: "flash_alert") %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -62,3 +62,48 @@
     @apply bg-indigo-700;
   }
 }
+
+.flash_notice,
+.flash_alert {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  box-sizing: border-box;
+  z-index: 5000;
+  border-radius: 4px;
+  text-align: center;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.flash_notice,
+.flash_alert {
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fadeIn 3s ease-in-out;
+}
