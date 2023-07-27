@@ -1,0 +1,56 @@
+version: "3"
+
+x-app: &app
+  image: railsbooster:latest
+  stdin_open: true
+  tty: true
+  environment:
+    DATABASE_NAME: postgres
+    DATABASE_USER: postgres
+    DATABASE_PASSWORD: postgres
+    DATABASE_HOST: db
+    RAILS_ENV: development
+    RACK_ENV: development
+    RAILS_LOG_TO_STDOUT: true
+    BOOTSNAP_CACHE_DIR: /usr/local/bundle/_bootsnap
+    YARN_CACHE_FOLDER: /app/node_modules/.yarn-cache
+    GOOD_JOB_EXECUTION_MODE: async
+  volumes:
+    - .:/app
+    - bundle_cache:/usr/local/bundle
+    - rails_cache:/app/tmp/cache
+    - node_modules:/app/node_modules
+  depends_on:
+    - db
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+  web:
+    <<: *app
+    command: bundle exec rails s -b 0.0.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+  js:
+    <<: *app
+    command: yarn build --watch
+
+volumes:
+  db_data:
+  bundle_cache:
+  rails_cache:
+  node_modules:

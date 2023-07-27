@@ -1,0 +1,70 @@
+FROM ruby:3.2-slim-bullseye
+
+# Install dependencies
+RUN apt-get update -qq \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
+  build-essential \
+  libvips \
+  gnupg2 \
+  curl \
+  git \
+  libpq-dev \
+  libxml2-dev \
+  libxslt1-dev \
+  && apt-get clean
+
+WORKDIR /app
+
+# Install PostgreSQL dependencies
+RUN curl -sSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+  gpg --dearmor -o /usr/share/keyrings/postgres-archive-keyring.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/postgres-archive-keyring.gpg] https://apt.postgresql.org/pub/repos/apt/" \
+  bullseye-pgdg main 14 | tee /etc/apt/sources.list.d/postgres.list > /dev/null
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,target=/var/lib/apt,sharing=locked \
+  --mount=type=tmpfs,target=/var/log \
+  apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrade && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
+  libpq-dev \
+  postgresql-client-15
+
+# Install Nodejs
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - && \
+  apt-get install -y nodejs
+
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+  apt-get update && \
+  apt-get install -y yarn
+
+# Configure bundler
+ENV LANG=C.UTF-8 \
+  BUNDLE_JOBS=4 \
+  BUNDLE_RETRY=3
+
+# Store Bundler settings in the project's root
+ENV BUNDLE_APP_CONFIG=.bundle
+
+# Upgrade RubyGems and install the latest Bundler version
+RUN gem update --system && \
+  gem install bundler
+
+# Install gems
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+RUN bundle install
+
+# Install Node modules
+COPY package.json /app/package.json
+COPY yarn.lock /app/yarn.lock
+RUN yarn install
+
+# Copy app
+COPY . /app
+
+# Expose port 3000 to the Docker host, so we can access it
+# from the outside.
+EXPOSE 3000
+
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
