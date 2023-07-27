@@ -51,6 +51,8 @@ gem "bootsnap", require: false
 
 gem "inline_svg"
 gem "good_job"
+gem "devise"
+gem "name_of_person"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

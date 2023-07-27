@@ -66,6 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -79,6 +80,12 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    devise (4.9.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
@@ -121,6 +128,8 @@ GEM
     mini_mime (1.1.2)
     minitest (5.19.0)
     msgpack (1.7.2)
+    name_of_person (1.1.1)
+      activesupport (>= 5.2.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -135,6 +144,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.3-arm64-darwin)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.5.3)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -179,6 +189,9 @@ GEM
     rake (13.0.6)
     reline (0.3.7)
       io-console (~> 0.5)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -196,6 +209,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -215,10 +230,12 @@ DEPENDENCIES
   bootsnap
   cssbundling-rails
   debug
+  devise
   good_job
   inline_svg
   jbuilder
   jsbundling-rails
+  name_of_person
   pg (~> 1.1)
   pry-rails
   puma (~> 6.0)

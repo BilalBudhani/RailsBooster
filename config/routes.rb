@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  mount GoodJob::Engine => 'good_job'
+  devise_for :users
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount GoodJob::Engine => 'good_job'
+  end
 
   # Defines the root path route ("/")
   # root "articles#index"
