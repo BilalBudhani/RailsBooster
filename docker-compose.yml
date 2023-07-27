@@ -20,6 +20,7 @@ x-app: &app
     - bundle_cache:/usr/local/bundle
     - rails_cache:/app/tmp/cache
     - node_modules:/app/node_modules
+    - ./.pry_history:/root/.pry_history
   depends_on:
     - db
 
