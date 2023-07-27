@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  h1 {
+    @apply font-bold text-5xl;
+  }
+
+  h2 {
+    @apply font-bold text-4xl;
+  }
+
+  h3 {
+    @apply font-bold text-3xl;
+  }
+
+  a {
+    @apply text-indigo-600;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+}
+
+@layer components {
+  .card {
+    @apply max-w-lg w-full bg-white rounded-md border-2 p-6;
+  }
+
+  .form-field {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-gray-800 text-sm font-bold;
+  }
+
+  .form-input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+  }
+
+  .form-input:focus {
+    @apply outline-none;
+  }
+
+  .btn {
+    @apply font-medium text-sm;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-indigo-600 text-white font-medium rounded;
+  }
+
+  .btn-primary:hover {
+    @apply bg-indigo-700;
+  }
+}
