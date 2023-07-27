@@ -33,3 +33,8 @@ interaction:
     description: Run Postgres psql console
     service: web
     command: psql
+
+  yarn:
+    description: Run yarn commands
+    service: web
+    command: yarn

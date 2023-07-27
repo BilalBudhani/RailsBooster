@@ -48,6 +48,9 @@ services:
   js:
     <<: *app
     command: yarn build --watch
+  css:
+    <<: *app
+    command: yarn build:css --watch
 
 volumes:
   db_data:
