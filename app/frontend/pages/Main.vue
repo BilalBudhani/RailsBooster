@@ -1,5 +1,29 @@
+<script setup>
+import { Link, Head } from '@inertiajs/vue3'
+import Layout from '../components/layouts/Layout.vue'
+
+defineOptions({
+  layout: Layout,
+})
+
+defineProps({
+  user: {
+    type: Object,
+  },
+})
+
+</script>
 <template>
-  <div>
-    <h1>Hello World</h1>
+  <Head title="Welcome!" />
+
+  <div class="container mx-auto max-w-xl text-center py-12">
+    <h1 class="text-6xl leading-tight italic font-black"> 🚀 RailsBooster</h1>
+
+    <p class="text-xl text-slate-700">Preconfigured Ruby On Rails Boilerplate To Provide Instant Productivity ⚡️</p>
+
+    <div class="py-6" v-if="user">
+      <strong>Welcome {{ user.first_name }}!</strong>
+      <Link href="/sessions/destroy" method="delete" as="button">Sign Out</Link>
+    </div>
   </div>
 </template>
