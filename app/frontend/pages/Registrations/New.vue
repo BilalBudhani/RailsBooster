@@ -16,8 +16,8 @@ defineProps({
   <h2 class="text-3xl font-bold mb-2">Sign Up</h2>
   <Form action="/registration" method="post" #default="{processing, errors}">
 
-    <Input label="First Name" type="text" id="first_name" name="user[first_name]" placeholder="John" required :errors="errors.first_name" />
-    <Input label="Last Name" type="text" id="last_name" name="user[last_name]" placeholder="Doe" required :errors="errors.last_name" />
+    <Input label="First Name" type="text" id="first_name" name="user[first_name]" placeholder="John" autofocus :errors="errors.first_name" />
+    <Input label="Last Name" type="text" id="last_name" name="user[last_name]" placeholder="Doe" :errors="errors.last_name" />
     <Input label="Email" type="email" id="email" name="user[email]" placeholder="example@example.com" required :errors="errors.email" />
     <Input label="Password" type="password" id="password" name="user[password]" placeholder="********" required :errors="errors.password" />
     <Input label="Password Confirmation" type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="********" required :errors="errors.password_confirmation" />
