@@ -2,6 +2,7 @@
 import Layout from '@/components/Layouts/Layout.vue'
 import { Form, Head } from '@inertiajs/vue3'
 import Input from '@/components/Form/Input.vue'
+import Button from '@/components/Form/Button.vue'
 
 defineOptions({
   layout: Layout,
@@ -16,9 +17,6 @@ defineOptions({
     <Input label="Email" type="email" id="email" name="email" placeholder="example@example.com" required />
     <Input label="Password" type="password" id="password" name="password" placeholder="********" required />
 
-    <button type="submit" class="text-white bg-slate-950 hover:bg-slate-700 py-2 px-4 font-medium rounded-md" :disabled="processing" :class="{'opacity-50 cursor-not-allowed': processing}">
-      <span v-if="processing">Please wait...</span>
-      <span v-else>Sign In</span>
-    </button>
+    <Button :loading="processing" type="submit">Sign In</Button>
   </Form>
 </template>
