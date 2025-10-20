@@ -23,7 +23,7 @@ defineProps({
 
     <div class="py-6" v-if="user">
       <strong>Welcome {{ user.first_name }}!</strong>
-      <Link href="/sessions/destroy" method="delete" as="button">Sign Out</Link>
+      <Link href="/session/destroy" method="delete" as="button" class="px-4 py-2 border border-red-500 text-red-500 rounded-md">Sign Out</Link>
     </div>
   </div>
 </template>
