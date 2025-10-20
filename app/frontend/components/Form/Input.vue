@@ -37,11 +37,16 @@ const model = defineModel()
 </script>
 <template>
   <div class="mb-4">
+    <!-- input label -->
     <label :for="id" class="mb-1 inline-flex items-center gap-0.5">
       <span>{{ label }}</span>
       <AsteriskIcon v-if="required" class="w-3 h-3" />
     </label>
+
+    <!-- input field -->
     <input :type="type" :id="id" :name="name" class="w-full p-2 border border-gray-300 rounded-md" :placeholder="placeholder" :required="required" v-model="model" :autofocus="autofocus" />
+
+    <!-- input form errors -->
     <p v-if="errors" class="text-red-500 text-xs mt-1" v-for="error in errors" :key="error">
       <span>{{label}} {{ error }}</span>
     </p>
