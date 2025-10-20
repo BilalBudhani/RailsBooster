@@ -1,12 +1,7 @@
 <script setup>
-import Layout from '@/components/Layouts/Layout.vue'
 import { Form, Head } from '@inertiajs/vue3'
 import Input from '@/components/Form/Input.vue'
 import Button from '@/components/Form/Button.vue'
-
-defineOptions({
-  layout: Layout,
-})
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 import { createInertiaApp } from '@inertiajs/vue3'
 import { createApp, h } from 'vue'
 import './application.css';
+import Layout from "@/components/Layouts/Layout.vue"
 
 createInertiaApp({
   // Set default page title
@@ -11,21 +12,22 @@ createInertiaApp({
   // Disable progress bar
   //
   // see https://inertia-rails.dev/guide/progress-indicators
-  progress: true,
+  progress: {
+    color: "oklch(20.8% 0.042 265.755)", // Tailwind slate-800
+  },
 
   resolve: (name) => {
     const pages = import.meta.glob('../pages/**/*.vue', {
       eager: true,
     })
-    return pages[`../pages/${name}.vue`]
 
     // To use a default layout, import the Layout component
     // and use the following lines.
     // see https://inertia-rails.dev/guide/pages#default-layouts
     //
-    // const page = pages[`../pages/${name}.vue`]
-    // page.default.layout = page.default.layout || Layout
-    // return page
+    const page = pages[`../pages/${name}.vue`]
+    page.default.layout = page.default.layout || Layout
+    return page
   },
 
   setup({ el, App, props, plugin }) {

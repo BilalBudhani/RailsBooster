@@ -1,11 +1,6 @@
 <script setup>
 import { Link, Head } from '@inertiajs/vue3'
-import Layout from '@/components/Layouts/Layout.vue'
 import { Rocket } from "lucide-vue-next"
-
-defineOptions({
-  layout: Layout,
-})
 
 defineProps({
   user: {
@@ -28,7 +23,7 @@ defineProps({
     <div class="py-6" v-if="user">
       <strong>Welcome {{ user.first_name }}!</strong>
       <span class="text-sm text-slate-500">You are in {{ user.time_zone }}</span>
-      <Link href="/session/destroy" method="delete" as="button" class="px-4 py-2 border border-red-500 text-red-500 rounded-md">Sign Out</Link>
+      <Link href="/session" method="delete" as="button" class="px-4 py-2 border border-red-500 text-red-500 rounded-md">Sign Out</Link>
     </div>
   </div>
 </template>
