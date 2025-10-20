@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   inertia_share if: :authenticated? do
     {
-      user: Current.user&.as_json(only: [:first_name, :last_name]),
+      user: Current.user&.as_json(only: [:first_name, :last_name, :time_zone]),
     }
   end
 end

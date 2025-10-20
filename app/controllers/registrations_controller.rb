@@ -3,9 +3,12 @@
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access only: %i[ new create ]
   rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to new_registration_url, alert: "Try again later." }
+  around_action :set_user_time_zones, only: %i[ new create ], if: -> { authenticated? && Current.user.time_zone.present? }
 
   def new
-    render inertia: 'Registrations/New'
+    render inertia: 'Registrations/New', props: {
+      time_zones: time_zones
+    }
   end
 
   def create
@@ -21,6 +24,14 @@ class RegistrationsController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :time_zone)
+  end
+
+  def time_zones
+    ActiveSupport::TimeZone.all.map { it.name }.sort
+  end
+
+  def set_user_time_zones
+    Time.use_zone(Current.user.time_zone) { yield }
   end
 end
