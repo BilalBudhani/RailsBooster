@@ -1,5 +1,10 @@
 <script setup>
 import { AsteriskIcon } from "lucide-vue-next"
+
+defineOptions({
+  inheritAttrs: false
+})
+
 const props = defineProps({
   label: {
     type: String,
@@ -17,15 +22,7 @@ const props = defineProps({
     type: String,
     default: 'text',
   },
-  placeholder: {
-    type: String,
-    default: '',
-  },
   required: {
-    type: Boolean,
-    default: false,
-  },
-  autofocus: {
     type: Boolean,
     default: false,
   },
@@ -33,6 +30,7 @@ const props = defineProps({
     type: Array
   }
 })
+
 const model = defineModel()
 </script>
 <template>
@@ -44,7 +42,7 @@ const model = defineModel()
     </label>
 
     <!-- input field -->
-    <input :type="type" :id="id" :name="name" class="w-full p-2 border border-gray-300 rounded-md" :placeholder="placeholder" :required="required" v-model="model" :autofocus="autofocus" />
+    <input :type="type" :id="id" :name="name" class="w-full p-2 border border-gray-300 rounded-md" :required="required" v-model="model" v-bind="$attrs" />
 
     <!-- input form errors -->
     <p v-if="errors" class="text-red-500 text-xs mt-1" v-for="error in errors" :key="error">

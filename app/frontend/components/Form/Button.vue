@@ -4,15 +4,11 @@ defineProps({
   loading: {
     type: Boolean,
     default: false,
-  },
-  type: {
-    type: String,
-    default: 'button'
   }
 })
 </script>
 <template>
-  <button :type="type" class="text-white bg-slate-950 hover:bg-slate-700 py-2 px-4 font-medium rounded-md" :disabled="loading" :class="{'opacity-50 cursor-not-allowed': loading}">
+  <button class="text-white bg-slate-950 hover:bg-slate-700 py-2 px-4 font-medium rounded-md" :disabled="loading" :class="{'opacity-50 cursor-not-allowed': loading}">
     <div v-if="loading" class="inline-flex items-center gap-1.5">
       <Loader class="w-4 h-4 animate-spin inline-block" />
       <span>Please wait...</span>
